@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-// Define form schema using Zod
+
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email format"),
@@ -15,7 +15,7 @@ const formSchema = z.object({
   path: ["confirmPassword"],
 });
 
-// Define TypeScript type for form fields
+
 type FormData = z.infer<typeof formSchema>;
 
 const ComplexForm: React.FC = () => {
